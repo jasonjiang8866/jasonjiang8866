@@ -1,72 +1,21 @@
-## Hi there 👋
+# Jason Jiang
 
-<!--
-**jasonjiang8866/jasonjiang8866** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**ML Systems / AI Infrastructure**
 
-Here are some ideas to get you started:
+I turn ML experiments into reproducible GPU workflows and working services into components other engineers can integrate. My background is in semiconductor manufacturing automation.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Selected work
 
-Hi — I'm a builder of production ML systems & LLM tooling 👋
+- **[waferVLM](https://github.com/jasonjiang8866/waferVLM)** — Wafer-map defect classification on the **same 160 validation maps**: DINOv3 LoRA **86.88%**, frozen DINOv3 + linear head **83.75%**, Qwen **78.13%**. **Evidence:** [full results](https://github.com/jasonjiang8866/waferVLM/blob/main/docs/dinov3-seed17-results.md) · [per-sample predictions and class probabilities](https://github.com/jasonjiang8866/waferVLM/blob/main/docs/showcase/dinov3-seed17/README.md#complete-predictions-and-probabilities). *Single-seed, validation-selected results—not an independent test or holdout evaluation.*
 
-I design and ship full-stack AI/ML products: fine-tuning and deploying LLMs, agent workflows, scalable data pipelines, and production inference stacks (Docker / Kubernetes / on-prem GPU). I like projects that connect research-y models to real-world systems and measurable outcomes.
+- **[FlashAttentionAnyCard](https://github.com/jasonjiang8866/flashattentionanycard)** — Reproducible Triton tuning for GEMM, RMSNorm, and grouped MoE. A real **PRO 6000 Blackwell MIG 24 GB** M0 run passed **19 GPU tests** and completed **18 tuning studies**; the temporary Pod was independently confirmed absent. **Evidence:** [M0 GPU run](https://github.com/jasonjiang8866/flashattentionanycard/actions/runs/43743010737) · [cleanup recovery](https://github.com/jasonjiang8866/flashattentionanycard/actions/runs/43743491986). *M0 is smoke/acceptance, not a performance benchmark. [M1 baselines and paired confirmation](https://github.com/jasonjiang8866/flashattentionanycard/pull/11) are in an open PR with offline CI; real GPU comparison and speedup claims remain pending.*
 
-🔭 Current focus
+- **[smbfileserver](https://github.com/jasonjiang8866/smbfileserver)** — A reusable **Go SMB client**, embeddable standard **`net/http` handler**, and native gateway with **streaming-by-default HTTP/1.1+ single-file reads**, service authentication, and share/path access controls. **Evidence:** [real Samba + restricted-container CI](https://github.com/jasonjiang8866/smbfileserver/actions/runs/43739229025). *Client, handler, streaming, access controls, and deployment foundations are merged; [observability PR #9](https://github.com/jasonjiang8866/smbfileserver/pull/9) is open. Real OpenShift cluster acceptance is still pending.*
 
-Post-training / PEFT (QLoRA, LoRA) for LLMs and agentic systems
+## More projects
 
-Fast, reproducible model deployment (vLLM, Ollama, LangGraph, containerized stacks)
-
-Production data pipelines and feature engineering for high-throughput environments
-
-🛠 Tech highlights
-
-Python · PyTorch · TensorFlow · PEFT/QLoRA · vLLM · LangGraph · Docker · Kubernetes / OpenShift · Go · Angular · Spark · Polars · Snowflake · REST / gRPC · CV (real-time inference)
-
-⭐ Selected projects
-
-Click each project to open the repo.
-
-MiniMind — Chinese → English Translation Agent
-
-A LangGraph + vLLM translation agent that performs multi-pass translation, quality validation and automatic fixes — built to create a high-quality zh→en dataset and production translation pipeline.
-
-PEFT Fine-Tuning Recipes — Classification
-
-Hands-on PEFT recipes and scripts (QLoRA / LoRA) for classification tasks: reproducible examples, training configs and evaluation scripts.
-
-Stable Diffusion WebUI — Docker
-
-One-click Docker setup for Stable Diffusion WebUI, with GPU support and common model installers — intended for local image generation and experimentation.
-
-SMB File Server
-
-Lightweight SMB file server templates and deployment scripts for self-hosted file sharing.
-
-Attendance System
-
-A simple attendance / check-in system (web + API) built for easy deployment and integration with internal tools.
-
-TabularML
-
-Experiments and templates for tabular machine learning workflows: feature engineering, model baselines, and model evaluation scripts.
-
-People-Counting in Real-Time
-
-Real-time computer-vision pipeline for estimating crowd/people counts from video streams with lightweight inference optimizations.
-
-📂 How I organize repos
-
-Reproducible examples (Docker + scripts) so others can run locally or on a GPU node
-
-Clear README with quickstart + minimal config for common dev environments (macOS / Linux)
-
-Small, focused notebooks and tests for core functionality
+- **[MiniMind zh2en agent](https://github.com/jasonjiang8866/minimind-zh2en-agent)** — LangGraph translation → validation → correction over a local vLLM endpoint; [data-integrity and resumable batch hardening](https://github.com/jasonjiang8866/minimind-zh2en-agent/pull/7) is in an open Draft PR with [mock-HTTP/CI evidence](https://github.com/jasonjiang8866/minimind-zh2en-agent/actions/runs/40533729630), not a live translation-quality benchmark.
+- **[PEFT classification recipes](https://github.com/jasonjiang8866/peft-fine-tuning-recipes-classification)** — 8-bit Llama 3.2 LoRA text classification with a Muon/AdamW optimizer harness, [tested CPU Trainer/PEFT checkpoint resume](https://github.com/jasonjiang8866/peft-fine-tuning-recipes-classification/actions/runs/40272905969), and a pinned RunPod image; CUDA training and optimizer performance remain unverified.
+- **[simplexLoRA-bench](https://github.com/jasonjiang8866/simplexLoRA-bench)** — Paired-seed LoRA / SimplexLoRA / DoRA GPU benchmarks with gradient diagnostics and archived lifecycle evidence.
+- **[spleeterpt](https://github.com/jasonjiang8866/spleeterpt)** — Trainable PyTorch Spleeter port, converted official weights, and measured bounded-memory long-audio inference.
+- **[runpod-ci-broker](https://github.com/jasonjiang8866/runpod-ci-broker)** — Budget-aware GPU experiment planning, read-only RunPod preflight, and fault-injection lifecycle simulation; general-purpose paid execution is not enabled.
