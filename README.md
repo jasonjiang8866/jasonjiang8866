@@ -14,6 +14,7 @@ I turn ML experiments into reproducible GPU workflows and working services into 
 
 ## More projects
 
+- **[PEFT classification recipes](https://github.com/jasonjiang8866/peft-fine-tuning-recipes-classification)** — 8-bit Llama 3.2 LoRA text classification with a Muon/AdamW optimizer harness, [tested CPU Trainer/PEFT checkpoint resume](https://github.com/jasonjiang8866/peft-fine-tuning-recipes-classification/actions/runs/40272905969), and a pinned RunPod image; CUDA training and optimizer performance remain unverified.
 - **[simplexLoRA-bench](https://github.com/jasonjiang8866/simplexLoRA-bench)** — Paired-seed LoRA / SimplexLoRA / DoRA GPU benchmarks with gradient diagnostics and archived lifecycle evidence.
 - **[spleeterpt](https://github.com/jasonjiang8866/spleeterpt)** — Trainable PyTorch Spleeter port, converted official weights, and measured bounded-memory long-audio inference.
 - **[runpod-ci-broker](https://github.com/jasonjiang8866/runpod-ci-broker)** — Budget-aware GPU experiment planning, read-only RunPod preflight, and fault-injection lifecycle simulation; general-purpose paid execution is not enabled.
